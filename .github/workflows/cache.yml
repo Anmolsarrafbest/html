@@ -25,5 +25,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: prime-cache
-        run: echo "Cache status: ${{ steps.cache.outputs.cache-hit }}"
+      - name: prime-cache-308e86a
+        run: echo "Cache status = ${{ steps.cache.outputs.cache-hit }}"
