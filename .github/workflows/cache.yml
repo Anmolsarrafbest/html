@@ -20,5 +20,5 @@ jobs:
           path: ~/.npm
           key: cache-308e86a
 
-      - name: "prime-cache-308e86a"
-        run: echo "Cache status: ${{ steps.cache.outputs.cache-hit }}"
+      - name: prime-cache-308e86a
+        run: echo 'Cache status:${{ steps.cache.outputs.cache-hit }}'
