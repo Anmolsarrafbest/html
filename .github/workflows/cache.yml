@@ -13,12 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Cache dependencies
+      - name: Cache npm dependencies
         id: cache
         uses: actions/cache@v4
         with:
           path: ~/.npm
-          key: cache-308e86a
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
-      - name: prime-cache-308e86a
+      - name: Install dependencies
+        run: npm install
+
+      - name: prime-cache
         run: echo "Cache status: ${{ steps.cache.outputs.cache-hit }}"
